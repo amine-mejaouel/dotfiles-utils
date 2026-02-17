@@ -49,7 +49,7 @@ function Install-LocalModule {
     Write-Verbose "Creating symbolic link to module at $destinationPath"
     New-Item -ItemType SymbolicLink -Path $destinationPath -Target $SourcePath -Force | Out-Null
 
-    Import-Module $ModulePath -Force
+    Import-Module $SourcePath -Force
 
     Write-Host "Module '$ModuleName' linked successfully to $destinationPath" -ForegroundColor Green
 }
